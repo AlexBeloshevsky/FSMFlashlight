@@ -1,0 +1,16 @@
+{
+  "name": "fsm-flashlight",
+  "version": "1.0.0",
+  "description": "the server part of my FSM flashlight",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "author": "Alex Beloshevsky",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
