@@ -29,7 +29,7 @@ export const FlashLightHead = styled.div`
 export const FlashLightNeck = styled.div`
   height: 0px;
   width: 120px;
-  border-top:80px solid #595959;
+  border-top: 80px solid #595959;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
 `;
@@ -46,8 +46,8 @@ export const StateChangeButton = styled.button`
   width: 40px;
   background-color: white;
   position: relative;
-  top:80px;
-  left:40px;
+  top: 80px;
+  left: 40px;
   border-radius: 8px;
   outline: none;
   border: none;
@@ -63,11 +63,11 @@ export const StateChangeButton = styled.button`
 `;
 
 export const FlashLightRay = styled.div`
-height: 0px;
-width: 160px;
-border-top:300px solid rgba(255,255,51,0.9);
-border-left:70px solid transparent;
-border-right:70px solid transparent;
+  height: 0px;
+  width: 160px;
+  border-top: 300px solid rgba(255, 255, 51, 0.9);
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
   &.off {
     visibility: hidden;
   }
