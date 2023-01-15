@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  data-testid="flashlight-1"
+>
+  <h1>
+    A FSM flashlight
+  </h1>
+  <p>
+    Currently the flashlight is in the following state: 
+    <span
+      data-testid="flashlight-2"
+    />
+  </p>
+  <div
+    className="sc-bcXHqe LLHhx"
+  >
+    <div
+      className="sc-gswNZR bnpZYs"
+    >
+      <button
+        data-testid="flashlight-3"
+        onClick={[Function]}
+      >
+        Change state
+      </button>
+    </div>
+    <div
+      className="sc-dkrFOg gWYVjy"
+    />
+    <div
+      className="sc-hLBbgP whWOl"
+    />
+  </div>
+</div>
+`;

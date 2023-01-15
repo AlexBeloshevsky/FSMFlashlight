@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const blinkAnimation = keyframes`
+0% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+`
 
 export const FlashLightWrapper = styled.div`
     display: flex;
@@ -34,18 +46,8 @@ export const FlashLightRay = styled.div`
         display: none;
       }
     &.blink {
-        animation: blink 2s linear infinite;
+      animation-name: ${blinkAnimation};
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
     }
 `
-
-@keyframes blink {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: .5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }

@@ -58,20 +58,20 @@ const FlashLight = () => {
     }
 
     return (
-        <>
-            <div>{curState}</div>
-
+        <div data-testid="flashlight-1">
+        <h1>A FSM flashlight</h1>
+        <p>Currently the flashlight is in the following state: <span data-testid="flashlight-2">{curState}</span></p>
             <FlashLightWrapper>
                 <FlashLightBody>
-                    <button onClick={() => {
+                    <button data-testid="flashlight-3" onClick={() => {
                         machine.transition(machine.value, 'switch')
                         setCurState(machine.value)
-                    }}>click</button>
+                    }}>Change state</button>
                 </FlashLightBody>
                 <FlashLightHead/>
                 <FlashLightRay className={className()} />
             </FlashLightWrapper>
-        </>
+        </div>
     )
 }
 
