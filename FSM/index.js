@@ -2,33 +2,33 @@ function createMachine(stateMachineDefinition) {
   const machine = {
     value: stateMachineDefinition.initialState,
     transition(currentState, event) {
-      const currentStateDefinition = stateMachineDefinition[currentState]
-      const destinationTransition = currentStateDefinition.transitions[event]
+      const currentStateDefinition = stateMachineDefinition[currentState];
+      const destinationTransition = currentStateDefinition.transitions[event];
       if (!destinationTransition) {
-        return
+        return;
       }
-      const destinationState = destinationTransition.target
+      const destinationState = destinationTransition.target;
       const destinationStateDefinition =
-        stateMachineDefinition[destinationState]
+        stateMachineDefinition[destinationState];
 
-      destinationTransition.action()
+      destinationTransition.action();
 
-      machine.value = destinationState
+      machine.value = destinationState;
 
-      return machine.value
+      return machine.value;
     },
-  }
-  return machine
+  };
+  return machine;
 }
 
 const machine = createMachine({
-  initialState: 'off',
+  initialState: "off",
   off: {
     transitions: {
       switch: {
-        target: 'on',
+        target: "on",
         action() {
-          console.log('transition action for "switch" in "off" state')
+          console.log('transition action for "switch" in "off" state');
         },
       },
     },
@@ -36,21 +36,21 @@ const machine = createMachine({
   on: {
     transitions: {
       switch: {
-        target: 'blink',
+        target: "blink",
         action() {
-          console.log('transition action for "switch" in "on" state')
+          console.log('transition action for "switch" in "on" state');
         },
       },
     },
   },
   blink: {
-      transitions: {
-        switch: {
-          target: 'off',
-          action() {
-            console.log('transition action for "switch" in "blink" state')
-          },
+    transitions: {
+      switch: {
+        target: "off",
+        action() {
+          console.log('transition action for "switch" in "blink" state');
         },
       },
     },
-})
+  },
+});
