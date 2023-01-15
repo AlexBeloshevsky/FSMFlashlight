@@ -16,7 +16,6 @@ function createMachine(stateMachineDefinition) {
         return machine.value
       },
     }
-    console.log("PPPPPP")
     return machine
   }
 
