@@ -4,7 +4,9 @@ import { getInitialState } from "../api/api";
 import {
   FlashLightWrapper,
   FlashLightBody,
+  FlashLightNeck,
   FlashLightHead,
+  StateChangeButton,
   FlashLightRay,
 } from "./flashlight.style";
 
@@ -72,19 +74,20 @@ const FlashLight = () => {
         <span data-testid="flashlight-2">{curState}</span>
       </p>
       <FlashLightWrapper>
+        <FlashLightRay className={className()} />
+        <FlashLightHead/>
+        <FlashLightNeck/>
         <FlashLightBody>
-          <button
+        <StateChangeButton
+            className={className()}
             data-testid="flashlight-3"
             onClick={() => {
               machine.transition(machine.value, "switch");
               setCurState(machine.value);
             }}
           >
-            Change state
-          </button>
+          </StateChangeButton>
         </FlashLightBody>
-        <FlashLightHead />
-        <FlashLightRay className={className()} />
       </FlashLightWrapper>
     </div>
   );

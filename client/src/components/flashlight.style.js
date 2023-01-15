@@ -13,37 +13,63 @@ const blinkAnimation = keyframes`
 `;
 
 export const FlashLightWrapper = styled.div`
+  width: 300px;
+  margin: auto;
   display: flex;
-  margin-top: 50px;
-  justify-content: flex-start;
-  margin-left: 50px;
+  flex-direction: column;
   align-items: center;
-  height: 175px;
-`;
-
-export const FlashLightBody = styled.div`
-  height: 100px;
-  width: 400px;
-  background-color: blue;
-  align-items: center;
-  display: flex;
-  justify-content: center;
 `;
 
 export const FlashLightHead = styled.div`
-  height: 120px;
-  width: 100px;
-  background-color: red;
+  background-color: #8c8c8c;
+  height: 50px;
+  width: 180px;
+`;
+
+export const FlashLightNeck = styled.div`
+  height: 0px;
+  width: 120px;
+  border-top:80px solid #595959;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+`;
+
+export const FlashLightBody = styled.div`
+  height: 310px;
+  width: 120px;
+  background-color: #8c8c8c;
+  border-radius: 0px 0px 20px 20px;
+`;
+
+export const StateChangeButton = styled.button`
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  position: relative;
+  top:80px;
+  left:40px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 5px #666666;
+  &.on {
+    top: 85px;
+    box-shadow: 0px 0px #666666;
+  }
+  &.blink {
+    top: 90px;
+    box-shadow: 0px -5px #666666;
+  }
 `;
 
 export const FlashLightRay = styled.div`
-  border-right: 400px solid #ffff00;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  height: 125px;
-  width: 0;
+height: 0px;
+width: 160px;
+border-top:300px solid rgba(255,255,51,0.9);
+border-left:70px solid transparent;
+border-right:70px solid transparent;
   &.off {
-    display: none;
+    visibility: hidden;
   }
   &.blink {
     animation-name: ${blinkAnimation};
