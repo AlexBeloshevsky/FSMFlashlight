@@ -9,14 +9,16 @@ import {
 } from "./flashlight.style";
 
 const FlashLight = () => {
-  const [curState, setCurState] = useState();
+  const [curState, setCurState] = useState('off');
 
   useEffect(() => {
-    getInitialState().then((res) => setCurState(res));
+    getInitialState()
+    .then((res) => setCurState(res))
+    .catch(() => setCurState('off'))
   }, []);
-
+  
   const machine = createMachine({
-    initialState: curState || "off",
+    initialState: curState,
     off: {
       transitions: {
         switch: {
@@ -66,7 +68,7 @@ const FlashLight = () => {
     <div data-testid="flashlight-1">
       <h1>A FSM flashlight</h1>
       <p>
-        Currently the flashlight is in the following state:{" "}
+        Currently the flashlight is in the following state: 
         <span data-testid="flashlight-2">{curState}</span>
       </p>
       <FlashLightWrapper>

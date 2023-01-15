@@ -1,3 +1,4 @@
+import React from 'react';
 import FlashLight from './components/flashlight';
 
 
